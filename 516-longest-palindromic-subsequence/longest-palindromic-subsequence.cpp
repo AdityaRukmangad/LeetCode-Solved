@@ -4,7 +4,7 @@ public:
         if(i<0 || j <0 ) return 0;
         if(dp[i][j]!=-1) return dp[i][j];
         if(s[i] == t[j])
-        return 1+ f(i-1 , j-1 , s , t ,dp);
+        return dp[i][j] = 1+ f(i-1 , j-1 , s , t ,dp);
         return dp[i][j] = max ( f(i-1 , j , s, t ,dp) , f(i , j -1 , s , t ,dp ));
     }
     int longestPalindromeSubseq(string s) {
